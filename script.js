@@ -21,7 +21,8 @@ teams.forEach(team => {
 
 const p = document.createElement("p")
 
-p.innerText = team.name
+p.innerText = jeanleo1309
+
 
 container.appendChild(p)
 
