@@ -4,11 +4,20 @@ const response = await fetch(
 "https://development-internship-api.geopostenergy.com/WorldCup/GetAllTeams",
 {
 headers:{
-"git-user":"seu_usuario_github"
+"git-user":"SEU_USUARIO"
 }
 }
 )
 
+const teams = await response.json()
+
+const groups = createGroups(teams)
+
+displayGroups(groups)
+
+displayMatches(groups)
+
+}
 const teams = await response.json()
 
 console.log(teams)
@@ -143,5 +152,32 @@ goals2
 }
 
 })
+
+}
+function displayMatches(groups){
+
+const container = document.getElementById("teams")
+
+for(let group in groups){
+
+const matches = generateMatches(groups[group])
+
+const title = document.createElement("h3")
+title.innerText = "Matches Group " + group
+
+container.appendChild(title)
+
+matches.forEach(match =>{
+
+const p = document.createElement("p")
+
+p.innerText =
+`${match.team1} ${match.goals1} x ${match.goals2} ${match.team2}`
+
+container.appendChild(p)
+
+})
+
+}
 
 }
