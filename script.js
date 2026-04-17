@@ -112,3 +112,36 @@ const groups = createGroups(teams)
 displayGroups(groups)
 
 }
+function generateMatches(groupTeams){
+
+const matches = [
+
+[0,1],
+[2,3],
+
+[0,2],
+[1,3],
+
+[0,3],
+[1,2]
+
+]
+
+return matches.map(match =>{
+
+const team1 = groupTeams[match[0]]
+const team2 = groupTeams[match[1]]
+
+const goals1 = Math.floor(Math.random()*5)
+const goals2 = Math.floor(Math.random()*5)
+
+return {
+team1: team1.name,
+team2: team2.name,
+goals1,
+goals2
+}
+
+})
+
+}
