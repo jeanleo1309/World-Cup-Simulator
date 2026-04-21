@@ -137,17 +137,24 @@ goals2:goalsB
 
 }
 
-function renderMatches(container,groups){
+function renderMatches(container, groups){
+
+const matchesBox = document.createElement("div")
+matchesBox.className = "matches"
+
+const title = document.createElement("h2")
+title.innerText = "Group Stage Matches"
+
+matchesBox.appendChild(title)
 
 GROUP_LETTERS.forEach(letter=>{
 
-const title=document.createElement("h3")
+const groupTitle = document.createElement("h3")
+groupTitle.innerText = "Group " + letter
 
-title.innerText="Matches Group "+letter
+matchesBox.appendChild(groupTitle)
 
-container.appendChild(title)
-
-const matches=generateMatches(groups[letter])
+const matches = generateMatches(groups[letter])
 
 matches.forEach(match=>{
 
@@ -155,10 +162,15 @@ const p=document.createElement("p")
 
 p.innerText=`${match.team1} ${match.goals1} x ${match.goals2} ${match.team2}`
 
-container.appendChild(p)
+matchesBox.appendChild(p)
 
 })
 
+})
+
+container.appendChild(matchesBox)
+
+}
 })
 
 }
