@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>World Cup Simulator</title>
@@ -10,11 +11,23 @@
 
 <h1>World Cup Simulator</h1>
 
-<button onclick="loadTeams()">Load Teams</button>
+<button onclick="startSimulation()">Start Simulation</button>
 
-<div id="teams"></div>
+<div id="groups"></div>
 
+<div id="matches"></div>
+
+<div id="table"></div>
+
+<div id="knockout"></div>
+
+<script src="js/api.js"></script>
+<script src="js/groups.js"></script>
+<script src="js/matches.js"></script>
+<script src="js/table.js"></script>
+<script src="js/knockout.js"></script>
 <script src="script.js"></script>
 
 </body>
+
 </html>
