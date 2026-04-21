@@ -1,6 +1,5 @@
 const API_URL = "https://development-internship-api.geopostenergy.com/WorldCup/GetAllTeams";
 const GIT_USER = "jeanleo1309";
-
 const GROUP_LETTERS = ["A","B","C","D","E","F","G","H"];
 
 const MATCH_MATRIX = [
